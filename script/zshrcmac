@@ -53,6 +53,7 @@ alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 alias dsclean="sh $FOLDER/script/dsclean"
 alias zshput="sh $FOLDER/script/zshput"
 alias findbigfile="sh $FOLDER/script/findbigfile"
+alias findfile="sh $FOLDER/script/findfile"
 
 
 
