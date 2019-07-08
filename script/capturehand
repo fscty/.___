@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ $# -eq 4 ]
+  then
+	  airodump-ng -c $1 --bssid $2 -w $3 $4
+else
+    echo "Usage : capturehand <channel> <bssid> <nom du fichier .cap> <interface reseau>"
+    exit 1
+fi
+

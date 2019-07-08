@@ -1,0 +1,2 @@
+#!/bin/sh
+googler -n 8 -w tecmint.com \"Linux command line tricks\"

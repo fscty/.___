@@ -1,0 +1,6 @@
+#!/bin/sh
+while true
+do
+    osascript -e 'tell app "System Events" to display dialog "Brew services Tor va débuter, cest cool?"'
+    echo "no"
+done

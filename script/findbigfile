@@ -1,0 +1,2 @@
+#!/bin/sh
+find . -size +10000 -exec ls -lh "{}" \; |  cut -c22-33,46- | cut -c6- | perl -p -e 's#  ./#\n        #'

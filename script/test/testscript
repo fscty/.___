@@ -1,0 +1,10 @@
+#!/bin/bash
+osascript -e 'tell app "System Events" to display dialog "Tor services is about to start in backgroundjob \r" buttons {"Cancel", "Start TOR"}'
+if [ "button returned:Start TOR" ]; then
+{
+    brew services start tor
+    sudo networksetup -setsocksfirewallproxy "Wi-Fi" 127.0.0.1 9050
+}
+else
+    exit 0
+fi

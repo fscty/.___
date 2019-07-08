@@ -1,0 +1,23 @@
+#!/bin/bash
+
+SURETY="$(osascript -e 'display dialog "COUUUUUUCOUUUUU
+<hihihhihihhihi> " buttons {"ta mere", "ton chien", "autres"} default button "ta mere"')"
+
+
+if [ "$SURETY" = "button returned:ta mere" ]; then
+{
+	osascript -e 'display dialog "COUCOU"
+<BIEN OUEJ> '
+
+}
+elif [ "$SURETY" = "button returned:ton chien" ]; then
+{
+	osascript -e 'display dialog "COUCOU"
+<BIEN OUEJ> '
+}
+else
+{
+	osascript -e 'display dialog "COUCOU"
+<BIEN OUEJ> '
+}
+fi

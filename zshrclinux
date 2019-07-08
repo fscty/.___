@@ -1,0 +1,74 @@
+  export ZSH="/root/.oh-my-zsh"
+ ZSH_DISABLE_COMPFIX=true
+ZSH_THEME="robbyrussell"
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+FOLDER="~/.___/"
+alias Gitexit="sh $FOLDER/script/Gitexit"
+alias showip="sh $FOLDER/script/showip"
+alias autosploit="sh $FOLDER/script/autosploit"
+alias accesspoint_linux="sh $FOLDER/script/accesspoint_linux"
+alias gitpush="sh $FOLDER/script/gitpush"
+
+
+alias checkban="sh $FOLDER/script/checkban"
+
+alias shred="sh $FOLDER/script/shred"
+alias certificats42="sh $FOLDER/script/certificats42"
+alias supbann="sh $FOLDER/script/supbann"
+alias suppbann="sh $FOLDER/script/suppbann"
+alias checkrootkit="sh $FOLDER/script/checkrootkit"
+alias gitencrypt="sh $FOLDER/script/gitencrypt"
+alias taille="sh $FOLDER/script/taille"
+alias doc="cd /home/admin/Documents"
+
+alias toolexit="sh $FOLDER/script/toolexit"
+alias fixbrew="sh $FOLDER/script/fixbrew"
+alias fixzsh="sh $FOLDER/script/fixzsh*"
+alias accesspoint="sh $FOLDER/script/daemon_AP.sh"
+
+alias dsclean="sh $FOLDER/script/dsclean"
+alias zshput="sh $FOLDER/script/zshput"
+
+
+alias kickout="sh $FOLDER/script/kickout"
+alias tools="cd ~/code/.__/exploit"
+alias ejectall="sh $FOLDER/script/ejectall"
+alias killjobs="sh $FOLDER/script/killjobs"
+alias torrestart="sh $FOLDER/script/torrestart"
+alias extensionfichierscript="sh $FOLDER/script/extensionfichierscript"
+alias torservicecheck="sh $FOLDER/script/torservicecheck"
+alias mp4="sh $FOLDER/script/mp4"
+alias mp3="sh $FOLDER/script/mp3"
+alias torscript="sh $FOLDER/script/torscript"
+alias brewmaj="sh $FOLDER/script/brewmaj"
+alias vog="cd /media/root/Git_crypted/.___vogsphere"
+alias desk="cd ~/Bureau/"
+alias process="ps -ax | grep $1"
+alias down="cd /home/admin/Téléchargements"
+alias scrippt="cd ~/.___/script"
+
+alias utile="cd ~/code/.__/utiles"
+
+alias sublim="/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text $1"
+alias 42filecheck='bash ~/42FileChecker/42FileChecker.sh'
+     
+alias torstart="sh $FOLDER/script/torstart"
+alias torstop="sh $FOLDER/script/torstop"
+alias showip="sh $FOLDER/script/showip"
+alias ipip="sh $FOLDER/script/ipip"
+alias iplocal="sh $FOLDER/script/iplocal"
+alias ipfulllocal="sh $FOLDER/script/ipfulllocal"
+alias startmonitormode="echo 1 | sudo tee /proc/brcm_monitor0"
+alias stopmonitormode="echo 0 | sudo tee /proc/brcm_monitor0"
+alias killAP="sh $FOLDER/script/killAP"
+
+autoload -U colors && colors
+
+PROMPT="$fg[magenta]%n@$reset_color$fg[white]%m$reset_color$fg[yellow] %~$reset_color
+<># "
+
+RPROMPT="%T"
+
+#

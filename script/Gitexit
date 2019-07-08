@@ -1,0 +1,10 @@
+#!/bin/sh
+diskutil list | grep Git | sed -e "s/disk/$(tput setab 1 ; tput bold)disk$(tput sgr0)/g"
+if [ $# = 1 ]
+ then
+echo $1
+echo "\033[32;1;7m\t\tOpération en cours...\t\t\033[0m"	
+	hdiutil detach $1
+ else
+echo "Syntaxe : $0 et Quel chemin de partition voulez-vous, ex: /dev/disk2s2"
+fi

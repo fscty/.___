@@ -1,0 +1,2 @@
+#!/bin/sh
+ssh oem@192.168.1.43 "sudo /bin/dd if=/dev/sda3 | gzip -1 -" | dd of=/mnt/Partition_Mint_MAcBookAir_W.iso

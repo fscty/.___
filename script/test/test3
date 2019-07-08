@@ -1,0 +1,22 @@
+#!/bin/bash
+
+osascript >/dev/null 2>&1 <<-EOF
+tell application id "com.apple.systemevents"
+set myMsg to "Tor services is about to start"
+set theResp to display dialog myMsg buttons {"Cancel", "Start TOR"} default button 2
+end tell
+
+# Following is not really necessary. Cancel returns 1 and OK 0 ...
+if button returned of theResp is "Start TOR" then
+return 1
+end if
+EOF
+
+# Check status of osascript
+if [ "$?" != "0" ] ; then
+echo "User aborted. Exiting..."
+exit 1
+fi
+
+#-- other bash stuff here
+echo "All good, moving on...."

@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ $# -eq 4 ]
+  then
+	create_ap $1 $2 $3 $4
+else
+	echo "Usage : accesspoint_linux \033[33m\033[1m\033[4m<\033[0m\033[29m\033[1m\033[4minterface wifi*\033[0m\033[33m\033[1m\033[4m>\033[0m\033[33m\033[1m\033[4m<\033[0minterface source d'internet\033[33m\033[1m\033[4m>\033[0m \033[33m\033[1m\033[4m<\033[0mnom du point d'accès\033[33m\033[1m\033[4m>\033[0m \033[33m\033[1m\033[4m<\033[0mmot de passe du point d'accès\033[33m\033[1m\033[4m>\033[0m"
+	echo "\n * = interface qui diffusera la connexion internet (wifi, modem, carte wifi externe) "
+fi

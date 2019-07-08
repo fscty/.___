@@ -1,0 +1,5 @@
+#!/bin/sh
+echo -ne '\007'
+echo -ne '\007'
+echo -ne '\007'
+beep -f 300.7 -r 2 -d 100 -l 400

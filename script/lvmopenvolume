@@ -1,0 +1,12 @@
+#!/bin/Sh
+lvscan
+
+#then activate all LVM you see
+
+sudo vgchange -ay
+
+#then re-run the mount:
+
+sudo mount /dev/mapper/my_encrypted_volume /media/my_device
+
+

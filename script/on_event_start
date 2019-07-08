@@ -1,0 +1,4 @@
+#!/bin/sh
+SMS_CLIENT="/usr/bin/sms_client"
+TO="0783549426"
+$SMS_CLIENT $TO "Motion detected $1"

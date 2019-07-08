@@ -1,0 +1,2 @@
+#!/bin/sh
+hdiutil attach /Users/admin/Documents/DMG/Git_encrypted.dmg

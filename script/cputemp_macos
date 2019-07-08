@@ -1,0 +1,12 @@
+#!/bin/sh
+while true
+do
+    echo "[31m|||||||||||[00m"
+    echo "[36m___________[00m"
+    echo "
+CPU TEMP ::
+[00m [37m[ $(~/.___/script/osx-cpu-temp) ][00m"
+    echo "
+"
+    sleep 4s
+done

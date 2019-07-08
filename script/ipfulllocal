@@ -1,0 +1,2 @@
+#!/bin/sh
+ifconfig ${if} | awk '{ if ($1 ~/inet/) { print $2} }'

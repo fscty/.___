@@ -1,0 +1,12 @@
+# 
+deb http://ftp.debian.org/debian stable main contrib non-free
+deb http://http.kali.org/kali kali-rolling main non-free contrib
+# deb cdrom:[Debian GNU/Linux 2018.4 _Kali-rolling_ - Official Snapshot amd64 LIVE/INSTALL Binary 20181016-18:11]/ kali-last-snapshot contrib main non-free
+
+#deb cdrom:[Debian GNU/Linux 2018.4 _Kali-rolling_ - Official Snapshot amd64 LIVE/INSTALL Binary 20181016-18:11]/ kali-last-snapshot contrib main non-free
+
+# This system was installed using small removable media
+# (e.g. netinst, live or single CD). The matching "deb cdrom"
+# entries were disabled at the end of the installation process.
+# For information about how to configure apt package sources,
+# see the sources.list(5) manual.

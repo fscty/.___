@@ -1,0 +1,8 @@
+#!/bin/bash
+apt-get -yq update
+apt-get -yq full-upgrade
+apt-get -yq dist-upgrade
+apt -yq autoremove
+apt -yq autoclean
+apt -yq clean
+apt -yq autoremove

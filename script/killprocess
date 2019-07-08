@@ -1,0 +1,27 @@
+#!/bin/sh
+if [ $# -eq 1 ]
+  then
+  	ps -ax | grep $1
+  	echo "Process found \n This is the PID : \n________\n$(ps -ax | grep $1 | cut -c2-5 | cat -e) \n________"
+  	sudo touch /tmp/search_process_waionscript.sh
+  	sudo chmod +x /tmp/search_process_waionscript.sh
+  	sudo echo $(cat /tmp/search_process_waionscript.sh | perl -pe "s#binsh#/bin/sh#g" | sed 's#/bin#!/bin#g' |  sed 's+!+#!+g') > /tmp/search_process_waionscript.sh
+  	sudo echo "$(ps -ax | grep $1 | cut -c1-5)" >> /tmp/search_process_waionscript.sh
+  	sudo echo "$(cat /tmp/search_process_waionscript.sh |perl -pe "s/ /kill /g")" > /tmp/search_process_waionscript.sh
+  	echo "FINISHED"
+  	echo "\n"
+  	echo "________"
+	sh /tmp/search_process_waionscript.sh
+	rm /tmp/search_process_waionscript.sh
+else
+	echo ":::       :::     :::     :::::::::  ::::    ::: ::::::::::: ::::    :::  ::::::::  
+:+:       :+:   :+: :+:   :+:    :+: :+:+:   :+:     :+:     :+:+:   :+: :+:    :+: 
++:+       +:+  +:+   +:+  +:+    +:+ :+:+:+  +:+     +:+     :+:+:+  +:+ +:+        
++#+  +:+  +#+ +#++:++#++: +#++:++#:  +#+ +:+ +#+     +#+     +#+ +:+ +#+ :#:        
++#+ +#+#+ +#+ +#+     +#+ +#+    +#+ +#+  +#+#+#     +#+     +#+  +#+#+# +#+   +#+# 
+ #+#+# #+#+#  #+#     #+# #+#    #+# #+#   #+#+#     #+#     #+#   #+#+# #+#    #+# 
+  ###   ###   ###     ### ###    ### ###    #### ########### ###    ####  ########  "
+  echo "\n\nThis Program can be dangerous for your pc, you could accidently kill process who are needed for the computer to work\n\n"
+    echo "Usage : killprocess <nom du processus que vous voulez kill>"
+    exit 1
+fi

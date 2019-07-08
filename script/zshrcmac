@@ -1,0 +1,92 @@
+export ZSH="/Users/admin/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+ZSH_DISABLE_COMPFIX="true"
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
+
+FOLDER="~/.___/"
+alias Gitexit="sh $FOLDER/script/Gitexit"
+alias showip="sh $FOLDER/script/showip"
+alias autosploit="sh $FOLDER/script/autosploit"
+alias converterallmkv="sh $FOLDER/script/converterallmkv"
+alias compress="sh $FOLDER/script/compress"
+alias cputemp="sh $FOLDER/script/cputemp_macos"
+
+alias checkban="sh $FOLDER/script/checkban"
+alias killprocess="sh $FOLDER/script/killprocess"
+alias drawing="sh $FOLDER/script/drawing"
+alias testdebit="sh $FOLDER/script/testdebit"
+
+alias speedtest-cli="sh $FOLDER/script/speedtest-cli"
+alias converterallmkv="sh $FOLDER/script/converterallmkv"
+
+
+alias gitpush="sh $FOLDER/script/gitpush"
+alias accesspoint="sh $FOLDER/script/accesspoint"
+alias msf="/opt/metasploit-framework/bin/msfconsole"
+
+
+
+alias shred="sh $FOLDER/script/shred"
+alias certificats42="sh $FOLDER/script/certificats42"
+alias supbann="sh $FOLDER/script/supbann"
+alias suppbann="sh $FOLDER/script/suppbann"
+alias checkrootkit="sh $FOLDER/script/checkrootkit"
+alias gitencrypt="sh $FOLDER/script/gitencrypt"
+alias taille="sh $FOLDER/script/taille"
+alias doc="cd /Users/admin/Documents"
+alias ipip="sh $FOLDER/script/ipip"
+alias iplocal="sh $FOLDER/script/iplocal"
+alias ipfulllocal="sh $FOLDER/script/ipfulllocal"
+alias startmonitormode="echo 1 | sudo tee /proc/brcm_monitor0"
+alias stopmonitormode="echo 0 | sudo tee /proc/brcm_monitor0"
+
+alias toolexit="sh $FOLDER/script/toolexit"
+alias fixbrew="sh $FOLDER/script/fixbrew"
+alias fixzsh="sh $FOLDER/script/fixzsh*"
+alias watchcam="sh $FOLDER/script/watchcam"
+alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+
+alias dsclean="sh $FOLDER/script/dsclean"
+alias zshput="sh $FOLDER/script/zshput"
+alias findbigfile="sh $FOLDER/script/findbigfile"
+
+
+
+alias kickout="sh $FOLDER/script/kickout"
+alias tools="cd ~/code/.__/exploit"
+alias ejectall="sh $FOLDER/script/ejectall"
+alias killjobs="sh $FOLDER/script/killjobs"
+alias torrestart="sh $FOLDER/script/torrestart"
+alias extensionfichierscript="sh $FOLDER/script/extensionfichierscript"
+alias torservicecheck="sh $FOLDER/script/torservicecheck"
+alias mp4="sh $FOLDER/script/mp4"
+alias mp3="sh $FOLDER/script/mp3"
+alias torscript="sh $FOLDER/script/torscript"
+alias brewmaj="sh $FOLDER/script/brewmaj"
+alias vog="cd /Volumes/Git_crypted/.___vogsphere"
+alias desk="cd ~/Desktop/"
+alias process="ps -ax | grep $1"
+alias down="cd /Users/admin/Downloads"
+alias scrippt="cd ~/.___/script"
+alias utile="cd ~/code/.__/utiles"
+
+alias sublim="/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text $1"
+alias 42filecheck='bash ~/42FileChecker/42FileChecker.sh'
+
+#alias mp4="sh /Users/admin/Desktop/script/mp4"      
+alias torstart="sh $FOLDER/script/torstart"
+alias torstop="sh $FOLDER/script/torstop"
+alias showip="sh $FOLDER/script/showip"
+
+autoload -U colors && colors
+
+PROMPT="$fg[magenta]%n@$reset_color$fg[white]%m$reset_color$fg[yellow] %~$reset_color
+<># "
+
+RPROMPT="%T"
+
+#

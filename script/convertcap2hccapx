@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ $# -eq 2 ]
+then
+	cp ~/script/cap2hccapx.bin /usr/bin
+	cap2hccapx.bin $1 $2
+else
+	echo "Usage: convert file_name.cap output_file_name.hccapx"
+fi

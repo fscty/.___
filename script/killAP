@@ -1,0 +1,3 @@
+#!/bin/sh
+ps -ax | grep AP.sh  | cut -c1-6 | head -n1
+kill $(ps -ax | grep AP.sh  | cut -c1-6 | head -n1)

@@ -1,0 +1,5 @@
+#!/bin/sh
+#Fix issues of root access
+sudo chown -R root:admin /usr/local && sudo chmod -R g+rwx /usr/local
+#Fix issues of last command of installation package : cp -pR /var/folders/$(new package) /usr/local/Cellar/$(old package)
+sudo chown -R $(whoami) $(brew --prefix)/*

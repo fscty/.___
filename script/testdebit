@@ -1,0 +1,10 @@
+#!/bin/sh
+downloadbit="$(speedtest-cli --simple | sed -n 2p | cut -c10-14)"
+uploadbit="$(speedtest-cli --simple | sed -n 3p | cut -c9-13)"
+downloadoctet="$(echo "$downloadbit / 8" | bc)"
+uploadoctet="$(echo "$downloadbit / 8" | bc)"
+echo "DEBIT DOWNLOAD EN MB : $downloadbit Mbit /s"
+echo "               EN MO : $(($downloadbit/8|bc)) Moctet /s"
+echo "\nDEBIT UPLOAD   EN MB : $uploadbit Mbit /s"
+echo "               EN MO : $(($uploadbit/8|bc)) Moctet /s"
+

@@ -1,0 +1,2 @@
+#!/bin/sh
+compaudit | xargs chown -R root && compinit -u && cd /usr/local && sudo chown -R root:0 * 

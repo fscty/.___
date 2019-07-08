@@ -1,0 +1,6 @@
+#!/bin/sh
+if ! [ -x "$(command -v curl)" ]; then
+ 		sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+ 	else
+ 		sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi

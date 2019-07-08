@@ -1,0 +1,5 @@
+#!/bin/sh
+systemctl start tor
+apt install dconf-editor
+gsettings set org.gnome.system.proxy mode manual
+gsettings set org.gnome.system.proxy ignore-hosts "['::1']"

@@ -1,0 +1,4 @@
+#!/bin/sh
+tell application "Terminal"
+    set bounds of window "Terminal" to {0, 0,1024, 768}
+end tell

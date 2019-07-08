@@ -1,0 +1,25 @@
+#!/bin/bash
+
+SURETY="$(osascript -e 'display dialog "Tor services is about to/is already start in background job, do you want to start it?
+<You need administrator access to change the network settings!> " buttons {"Stop", "Start", "CheckIP (double clique pour garder la fenêtre ouverte)"} default button "Start"')"
+
+if [ "$SURETY" = "button returned:Start" ]; then
+{
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	brew install tor && brew services start tor && sudo networksetup -setsocksfirewallproxy "Wi-Fi" 127.0.0.1 9050
+    echo -e "\033[32;1;7m\n\tProxy Socks5 is ON:\t[ $(curl -s monip.org | sed -e 's/.*IP : //' -e 's/<.*$//' |sed '1,7d') ]\t\033[0m"
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/fscty/.___/master/script/torscript)"
+
+}
+elif [ "$SURETY" = "button returned:CheckIP (double clique pour garder la fenêtre ouverte)" ]; then
+{
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/fscty/.___/master/script/checkip)"
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/fscty/.___/master/script/ipip)"
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/fscty/.___/master/script/torscript)"
+}
+else
+{
+	brew services stop tor && sudo networksetup -setsocksfirewallproxystate "Wi-Fi" off
+    echo -e "\033[31;1;7m\n\tProxy Socks5 is OFF:\t[ $(curl -s monip.org | sed -e 's/.*IP : //' -e 's/<.*$//' |sed '1,7d') ]\t\033[0m"
+}
+fi

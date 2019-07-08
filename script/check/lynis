@@ -1,0 +1,7 @@
+#!/bin/sh
+cd /opt/
+wget https://downloads.cisofy.com/lynis/lynis-2.6.6.tar.gz
+tar xvzf lynis-2.6.6.tar.gz
+mv lynis /usr/local/
+ln -s /usr/local/lynis/lynis /usr/local/bin/lynis
+lynis audit system

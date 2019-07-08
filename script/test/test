@@ -1,0 +1,73 @@
+START
+use AppleScript version "2.4" -- 10.10 or later
+use framework "Foundation"
+use framework "AppKit"
+use framework "Carbon" -- AEInteractWithUser() is in Carbon
+use scripting additions
+property returnCode : missing value
+
+on showMessage:theMessage withTitle:boldBit textFrame:textFieldSize textMaxWidth:maxWidth withButtons:buttonsList
+# credit to Shane Stanley for this handler
+-- make attributed string system font with monospaced digits
+set fontSize to current application's NSFont's systemFontSizeForControlSize:(current application's NSRegularControlSize)
+set theFont to current application's NSFont's systemFontOfSize:fontSize
+set attsDict to current application's NSDictionary's dictionaryWithObject:theFont forKey:(current application's NSFontAttributeName)
+set attString to current application's NSAttributedString's alloc()'s initWithString:theMessage attributes:attsDict
+-- make a text field to hold the message
+set theField to (current application's NSTextField's alloc()'s initWithFrame:textFieldSize)
+tell theField
+(its setEditable:false)
+(its setBordered:false)
+its setDrawsBackground:false
+its (cell()'s setWraps:true)
+its setPreferredMaxLayoutWidth:maxWidth
+its setAttributedStringValue:attString
+end tell
+
+-- make it fit; needs to be done on the main thread
+my performSelectorOnMainThread:"fitToSizeView:" withObject:theField waitUntilDone:true
+-- make sure we have permission
+set theError to current application's AEInteractWithUser(-1, missing value, missing value) -- -1 is kAEDefaultTimeout
+if theError is not 0 then error "User interaction disallowed" number theError
+	-- create an alert 
+	set theAlert to current application's NSAlert's alloc()'s init()
+	tell theAlert
+	its setMessageText:boldBit
+	repeat with anEntry in buttonsList
+	(its addButtonWithTitle:anEntry)
+end repeat
+its setAccessoryView:theField
+end tell
+-- show the alert; needs to be done on the main thread
+my performSelectorOnMainThread:"showTheAlert:" withObject:theAlert waitUntilDone:true
+set buttonNumber to returnCode mod 1000 + 1 -- where 1 = right-most button
+set buttonName to item buttonNumber of buttonsList
+return buttonName
+end showMessage:withTitle:textFrame:textMaxWidth:withButtons:
+
+on showTheAlert:theAlert
+# credit to Shane Stanley for this handler
+-- check we are running in foreground
+if not (current application's NSThread's isMainThread()) as boolean then error "This handler must be called on the main thread." from current application
+	set my returnCode to theAlert's runModal()
+end showTheAlert:
+
+on fitToSizeView:aView
+# credit to Shane Stanley for this handler
+aView's setFrameSize:(aView's fittingSize())
+end fitToSizeView:
+
+# set up the parameters for the showMessage call:
+set theMessage to "How many buttons would you like? There's no real limit except for practical and aesthetic considerations." & return & "Of course, I hope you'll never really think about using something as ugly as this!" & return & return & "Choose your heart out!"
+set theTitle to "Many Buttons"
+
+# increase or decrease the second item's numbers
+# to fit larger or smaller amounts of text
+# the '650' here is the text field's width
+# the '80' is its height
+set theTextFieldSize to {{0, 0}, {650, 80}}
+set buttonsToDisplay to {"OK", "Five", "Four", "Three", "Two", "One", "Cancel"}
+
+set theButtonReturned to its showMessage:theMessage withTitle:theTitle textFrame:theTextFieldSize textMaxWidth:(650) withButtons:buttonsToDisplay
+EOF
+

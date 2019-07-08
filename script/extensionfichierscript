@@ -1,0 +1,1 @@
+for f in *.avi; do fn=`echo $f|sed 's/-/_/g'`; mv "$f" "$fn"; done

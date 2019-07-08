@@ -1,0 +1,9 @@
+#!/bin/bash
+DEBIAN_FRONTED=noninteractive
+export DEBIAN_FRONTED
+apt-get -yq update
+apt-get -yq full-upgrade
+apt-get -yq dist-upgrade
+yes | apt-get install --fix-broken
+apt update
+

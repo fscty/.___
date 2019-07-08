@@ -1,0 +1,3 @@
+#!/bin/sh
+chkrootkit
+rkhunter -c

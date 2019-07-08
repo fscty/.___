@@ -1,0 +1,5 @@
+#!/bin/sh
+apt-get install linux-headers-$(uname -r | sed ‘s,[^-]*-[^-]*-,,’) broadcom-sta-dkms
+mod probe -r b44 b43 b43legacy ssb brcmsmac
+mod probe wl
+

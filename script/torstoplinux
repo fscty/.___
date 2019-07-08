@@ -1,0 +1,5 @@
+#!/bin/sh
+systemctl stop tor
+pkill tor
+gsettings set org.gnome.system.proxy mode none
+gsettings set org.gnome.system.proxy ignore-hosts "['localhost', '127.0.0.0/8', '192.168.1.0/24', '::1']" 

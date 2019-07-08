@@ -1,0 +1,5 @@
+#!/bin/bash
+brew services stop tor
+sudo networksetup -setsocksfirewallproxystate "Wi-Fi" off
+sudo networksetup -setsocksfirewallproxystate "iPhone USB" off
+sudo networksetup -setsocksfirewallproxystate "Ethernet" off

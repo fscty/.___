@@ -1,0 +1,6 @@
+#!/bin/sh
+#for i in {1..5}; do whiptail --title "::: TOR STATUS :::" --msgbox "$(~/.___/script/torservicecheck)" 8 60; done
+while true
+do
+	./torservicecheck
+done

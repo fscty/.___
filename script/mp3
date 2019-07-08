@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ $# -eq 1 ]
+  then
+	youtube-dl --extract-audio --audio-format mp3 $1
+	
+else
+	say -v Amelie "Vous devez spécifier l'URL de la vidéo youtoube en argument"
+	exit 1
+fi
+

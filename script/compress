@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ $# -eq 2 ]
+  then
+  lrzip -r $1  -O $2 --zpaq
+  else
+   echo "Usage : compress <ce que vous voulez compresser> <dossier de destination>   "
+   exit 1
+ fi

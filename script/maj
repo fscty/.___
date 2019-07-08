@@ -1,0 +1,4 @@
+#!/bin/sh
+~/.___/script/scrippt
+git pull
+~/.___/script/brewmaj

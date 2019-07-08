@@ -1,0 +1,4 @@
+airport -s
+airport en0(interface) sniff 11(channel) 
+ls /tmp/airportSniff*.cap
+ps -ax | grep -a airport.*sniff

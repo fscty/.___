@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo hdiutil attach /Users/admin/Documents/DMG/Tools.dmg

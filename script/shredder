@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ $# -eq 2 ]
+  then
+  sudo shred -n 35 -z -u -v $*
+  else
+	  echo "Usage : shredder <nom(s) des(du) fichier(s) a SHRED>  "
+   exit 1
+ fi
