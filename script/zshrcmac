@@ -14,6 +14,7 @@ alias autosploit="sh $FOLDER/script/autosploit"
 alias converterallmkv="sh $FOLDER/script/converterallmkv"
 alias compress="sh $FOLDER/script/compress"
 alias cputemp="sh $FOLDER/script/cputemp_macos"
+alias kickoutR="sh $FOLDER/script/kickoutR"
 
 alias checkban="sh $FOLDER/script/checkban"
 alias killprocess="sh $FOLDER/script/killprocess"

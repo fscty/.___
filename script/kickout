@@ -1,2 +1,2 @@
 #!/bin/sh
-python3 ~/kickout/kickthemout.py
+python3 ~/wifi/kickthemout.py $1 $2
